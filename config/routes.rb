@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   # get 'books/index'
   # get 'books/show'
   # get 'books/edit'
-  resources :books, only: [:new, :index, :show, :edit]
+  resources :books, only: [:new, :index, :show, :edit, :create, :update, :destroy]
   # devise_for :users
   # get 'homes/top'
   root to: "homes#top"
