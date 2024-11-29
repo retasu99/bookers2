@@ -36,6 +36,6 @@
 
 <% if @book_show.user == current_user %>
   <%= link_to "Edit", edit_book_path(@book_show.id) %>
-  <%= link_to "Destroy", book_path(@book_show.id), method: :delete %>
+  <%= link_to "Destroy", book_path(@book_show.id), method: :delete, "data-confirm" => "本当に消しますか？" %>
 <% end %>
 
