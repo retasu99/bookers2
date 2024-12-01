@@ -8,13 +8,14 @@
   <% if user == current_user %>
     <%= link_to "編集", edit_user_path(current_user.id) %>
   <% else %>
-    <%= link_to "編集", user_path(current_user.id) %>
+    <%#= link_to "編集", user_path(current_user.id) #%>
+    <%= link_to "編集", edit_user_path(user.id) %>
   <% end %>
 </div>
 
 
 
-<h1>New booK</h1>
+<h1>New book</h1>
 <%= form_with model: book do |f| %>
 
   <h4>Title</h4>
