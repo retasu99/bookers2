@@ -9,19 +9,29 @@
 
 <%#=------------------------------------------------------------#%>
 
-<%= render partial: 'layouts/leftside', locals: { user: current_user, book: @book } %>
+<div class="container">
+  <div class="row">
+
+    <div class="col-md-3">
+      <%= render partial: 'layouts/leftside', locals: { user: current_user, book: @book } %>
+    </div>
 
 <%#=------------------------------------------------------------#%>
 
-<h1>Books</h1>
-<% @books.each do |book| %>
-  <div>
-    <%= link_to user_path(book.user.id) do %>
-      <%= image_tag book.user.get_profile_image(100,100) %>
-    <% end %>
-    <%= link_to book_path(book.id) do %>
-      <p><%= book.title %></p>
-    <% end %>
-    <p><%= book.body %></p>
+    <div class="col-md-8 offset-md-1">
+      <h1>Books</h1>
+      <% @books.each do |book| %>
+        <div>
+          <%= link_to user_path(book.user.id) do %>
+            <%= image_tag book.user.get_profile_image(100,100) %>
+          <% end %>
+          <%= link_to book_path(book.id) do %>
+            <p><%= book.title %></p>
+          <% end %>
+          <p><%= book.body %></p>
+        </div>
+      <% end %>
+    </div>
+
   </div>
-<% end %>
+</div>

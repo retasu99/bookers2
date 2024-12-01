@@ -1,19 +1,29 @@
-<%= render partial: 'layouts/leftside', locals: { user: @book_show.user, book: @book } %>
+<div class="container">
+  <div class="row">
+
+    <div class="col-md-3">
+      <%= render partial: 'layouts/leftside', locals: { user: @book_show.user, book: @book } %>
+    </div>
 
 <%#=------------------------------------------------------------#%>
 
-<h1>Book detail</h1>
+    <div class="col-md-8 offset-md-1">
+      <h1>Book detail</h1>
 
-<%= link_to user_path(@book_show.user.id) do %>
-  <%= image_tag @book_show.user.get_profile_image(100,100) %>
-  <%= @book_show.user.name %>
-<% end %>
+      <%= link_to user_path(@book_show.user.id) do %>
+        <%= image_tag @book_show.user.get_profile_image(100,100) %>
+        <%= @book_show.user.name %>
+      <% end %>
 
-<p><%= link_to "#{@book_show.title}", book_path(@book_show.id) %></p>
-<p><%= @book_show.body %></p>
+      <p><%= link_to "#{@book_show.title}", book_path(@book_show.id) %></p>
+      <p><%= @book_show.body %></p>
 
-<% if @book_show.user == current_user %>
-  <%= link_to "Edit", edit_book_path(@book_show.id) %>
-  <%= link_to "Destroy", book_path(@book_show.id), method: :delete, "data-confirm" => "本当に消しますか？" %>
-<% end %>
+      <% if @book_show.user == current_user %>
+        <%= link_to "Edit", edit_book_path(@book_show.id) %>
+        <%= link_to "Destroy", book_path(@book_show.id), method: :delete, "data-confirm" => "本当に消しますか？" %>
+      <% end %>
+    </div>
+
+  </div>
+</div>
 
