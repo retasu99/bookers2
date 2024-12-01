@@ -6,10 +6,13 @@
   <p>introduction:<%= user.introduction %></p>
 
   <% if user == current_user %>
-    <%= link_to "編集", edit_user_path(current_user.id) %>
+    <%= link_to edit_user_path(current_user.id) do %>
+      <span><i class="fa-solid fa-user-gear"></i></span>
+    <% end %>
   <% else %>
-    <%#= link_to "編集", user_path(current_user.id) #%>
-    <%= link_to "編集", edit_user_path(user.id) %>
+    <%= link_to edit_user_path(user.id) do %>
+      <span><i class="fa-solid fa-user-gear"></i></span>
+    <% end %>
   <% end %>
 </div>
 

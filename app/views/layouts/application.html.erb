@@ -22,33 +22,59 @@
       <div class="col-6 offset-4">
         <% if user_signed_in? %>
           <div class="row">
+
           <div class="col-3">
-            <%= link_to("Home", user_path(current_user.id),class: 'text-light')%>
+            <%= link_to user_path(current_user.id), class: 'text-light' do %>
+              <span><i class="fa-solid fa-house"></i> Home</span>
+            <% end %>
           </div>
+
           <div class="col-3">
-            <%= link_to("Users", users_path, class: 'text-light')%>
+            <%= link_to users_path, class: 'text-light' do %>
+              <span><i class="fa-solid fa-users"></i> Users</span>
+            <% end %>
           </div>
+
           <div class="col-3">
-            <%= link_to("Books", books_path, class: 'text-light')%>
+            <%= link_to books_path, class: 'text-light' do %>
+              <span><i class="fa-solid fa-book-open"></i> Books</span>
+            <% end %>
           </div>
+
           <div class="col-3">
-            <%= link_to("Log out", destroy_user_session_path, method: :delete, class: 'text-light')%>
+            <%= link_to destroy_user_session_path, method: :delete, class: 'text-light' do %>
+              <span><i class="fa-solid fa-right-from-bracket"></i> Log out</span>
+            <% end %>
           </div>
+
           </div>
         <% else %>
           <div class="row">
+
           <div class="col-3">
-            <%= link_to("Home", root_path, class: 'text-light')%>
+            <%= link_to root_path, class: 'text-light' do %>
+              <span><i class="fa-solid fa-house"></i> Home</span>
+            <% end %>
           </div>
+
           <div class="col-3">
-            <%= link_to("About", about_path, class: 'text-light')%>
+            <%= link_to about_path, class: 'text-light' do %>
+              <span><i class="fa-solid fa-link"></i> About</span>
+            <% end %>
           </div>
+
           <div class="col-3">
-            <%= link_to("Sign up", new_user_registration_path, class: 'text-light')%>
+            <%= link_to new_user_registration_path, class: 'text-light' do %>
+              <span><i class="fa-solid fa-user-plus"></i> Sign up</span>
+            <% end %>
           </div>
+
           <div class="col-3">
-            <%= link_to("Log in", new_user_session_path, class: 'text-light')%>
+            <%= link_to new_user_session_path, class: 'text-light' do %>
+              <span><i class="fa-solid fa-right-to-bracket"></i> Log in</span>
+            <% end %>
           </div>
+
           </div>      
         <% end %>
       </div>
