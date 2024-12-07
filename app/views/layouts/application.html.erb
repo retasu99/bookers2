@@ -18,7 +18,9 @@
     <div class="header row bg-dark py-3">
 
       <div class="Book col-1 offset-3">
-        <%= link_to("Bookers", root_path, class: 'text-light text-decoration-none')%>
+        <%= link_to root_path, class: 'text-decoration-none' do %>
+          <span class="text-light">Bookers</span>
+        <% end %>
       </div>
 
 
