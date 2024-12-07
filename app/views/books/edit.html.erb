@@ -1,32 +1,29 @@
 <div class="edit-book offset-4 px-5">
 
-<br>
-<h1>Editing Book</h1>
+  <br>
+  <h1>Editing Book</h1>
 
 
-<% if @book.errors.any? %>
-  <h2><%= @book.errors.count %> errors prohibited this obj from being saved:</h2>
-  <ul>
-    <% @book.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
-    <% end %>
-  </ul>
-<% end %>
+  <% if @book.errors.any? %>
+    <h2><%= @book.errors.count %> errors prohibited this obj from being saved:</h2>
+    <ul>
+      <% @book.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  <% end %>
 
 
+  <%= form_with model: @book do |f| %>
+    <label for="inputTitle">Title</label><br>
+    <%= f.text_field :title, size: "50", autofocus: true, id:"inputTitle" %><br><br>
 
-<%= form_with model: @book do |f| %>
+    <label for="inputBody">Opinion</label><br>
+    <%= f.text_area :body, size: "60" %><br><br>
 
-  <label for="inputTitle">Title</label><br>
-  <%= f.text_field :title, size: "50", autofocus: true, id:"inputTitle" %><br><br>
+    <%= f.submit "Update Book", class: 'btn btn-success' %>
+  <% end %><br>
 
-  <label for="inputBody">Opinion</label><br>
-  <%= f.text_area :body, size: "60" %><br><br>
-
-  <%= f.submit "Update Book", class: 'btn btn-success' %>
-
-<% end %><br>
-
-<p><%= link_to "Show", book_path(@book.id) %> | <%= link_to "Back", books_path %></p>
+  <p><%= link_to "Show", book_path(@book.id) %> | <%= link_to "Back", books_path %></p>
 
 </div>

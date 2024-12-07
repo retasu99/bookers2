@@ -31,19 +31,16 @@
             <span class="px-2"><i class="fa-solid fa-house"></i> Home</span>
           <% end %>
         
-
         
           <%= link_to users_path, class: 'text-light text-decoration-none' do %>
             <span class="px-2"><i class="fa-solid fa-users"></i> Users</span>
           <% end %>
         
-
         
           <%= link_to books_path, class: 'text-light text-decoration-none' do %>
             <span class="px-2"><i class="fa-solid fa-book-open"></i> Books</span>
           <% end %>
         
-
         
           <%= link_to destroy_user_session_path, method: :delete, class: 'text-light text-decoration-none' do %>
             <span class="px-2"><i class="fa-solid fa-right-from-bracket"></i> Log out</span>
@@ -55,31 +52,28 @@
       <% else %>
 
 
-          <div class="col-5 offset-3">
+        <div class="col-5 offset-3">
 
-            <%= link_to root_path, class: 'text-light text-decoration-none' do %>
-              <span class="px-2"><i class="fa-solid fa-house"></i> Home</span>
-            <% end %>
+          <%= link_to root_path, class: 'text-light text-decoration-none' do %>
+            <span class="px-2"><i class="fa-solid fa-house"></i> Home</span>
+          <% end %>
           
+          
+          <%= link_to about_path, class: 'text-light text-decoration-none' do %>
+            <span class="px-2"><i class="fa-solid fa-link"></i> About</span>
+          <% end %>
+          
+          
+          <%= link_to new_user_registration_path, class: 'text-light text-decoration-none' do %>
+            <span class="px-2"><i class="fa-solid fa-user-plus"></i> Sign up</span>
+          <% end %>
+          
+          
+          <%= link_to new_user_session_path, class: 'text-light text-decoration-none' do %>
+            <span class="px-2"><i class="fa-solid fa-right-to-bracket"></i> Log in</span>
+          <% end %>
 
-          
-            <%= link_to about_path, class: 'text-light text-decoration-none' do %>
-              <span class="px-2"><i class="fa-solid fa-link"></i> About</span>
-            <% end %>
-          
-
-          
-            <%= link_to new_user_registration_path, class: 'text-light text-decoration-none' do %>
-              <span class="px-2"><i class="fa-solid fa-user-plus"></i> Sign up</span>
-            <% end %>
-          
-
-          
-            <%= link_to new_user_session_path, class: 'text-light text-decoration-none' do %>
-              <span class="px-2"><i class="fa-solid fa-right-to-bracket"></i> Log in</span>
-            <% end %>
-
-          </div>
+        </div>
 
 
       <% end %>
@@ -93,6 +87,8 @@
     </div>
 
     <%= yield %>
+
+<%#=--------------------------------------------------------------------------------------#%>
     
     <footer class="pt-5 pb-4">
       <div class="text-center">
